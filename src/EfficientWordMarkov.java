@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.NoSuchElementException;
 
-class EfficientWordMarkov extends EfficientMarkov {
+class EfficientWordMarkov extends BaseWordMarkov {
 //implement and override setTraining and getFollows with WordGram objects
 // string myText from BaseMarkov becomes String[] myWords
 	String[] myWords;
