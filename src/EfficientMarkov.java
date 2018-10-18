@@ -34,25 +34,30 @@ import java.util.ArrayList;
 	public void setTraining(String text) {
 		myText = text;
 		myMap.clear();
-		
 		//map.getKey gets the value
-		for (int index=0; index < myText.length(); index++) {
+		for (int index=0; index < myText.length()- myOrder+1; index++) {
 			String textKey= myText.substring(index, index+myOrder);			
 			ArrayList<String> nList = new ArrayList<String>();
-			nList.add(String.valueOf(myText.charAt(index+3)));
-			myMap.put(textKey,  nList);
+			if (!myMap.containsKey(textKey)) {
+				nList.add(String.valueOf(myText.charAt(index+3)));
+				myMap.put(textKey,  nList);
+			}
+			if (myMap.containsKey(textKey)) {
+				nList= myMap.get(textKey);
+				nList.add(String.valueOf(myText.charAt(index+3)));
+			}
+			
+			// need if statements, if key does not exist ->
+			//if key already exists then just get key and add value
 				
 					//last key value should equal pseudo thing
-					if(index+1 == myText.length()) {
+					if(index+myOrder == myText.length()- myOrder+1) {
 					ArrayList<String> aList = new ArrayList<String>();
 					aList.add(PSEUDO_EOS);
 					myMap.put(textKey, aList);
 					}
 			
 		}
-		
-		
-		
 		
 		
 		
@@ -68,6 +73,8 @@ import java.util.ArrayList;
 		int pos = 0;  // location where search for key in text starts
 		
 		while (pos < myText.length()){
+			//if null throw error
+			//else return map key 
 			int start = myText.indexOf(key,pos);
 			if (start == -1){
 				//System.out.println("didn't find "+key);
