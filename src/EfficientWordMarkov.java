@@ -11,7 +11,7 @@ public class EfficientWordMarkov extends BaseWordMarkov {
 		super(order);
 	}
 	public EfficientWordMarkov() {
-		this(3);
+		this(2);
 	}
 	@Override
 	public void setTraining(String text) {
@@ -21,7 +21,7 @@ public class EfficientWordMarkov extends BaseWordMarkov {
 		myMap.clear();
 		
 		for (int index=0; index < (myWords.length -myOrder+1); index++) {
-			WordGram curGram= new WordGram(myWords, index, myOrder);
+			WordGram curGram= new WordGram(myWords, index, myWords.length);
 			//checks if map contains key, if not adds key and empty array list
 			if (!myMap.containsKey(curGram)) {
 				ArrayList<String> nList = new ArrayList<String>();
@@ -38,9 +38,6 @@ public class EfficientWordMarkov extends BaseWordMarkov {
 
 		}
 	}
-	
-
-	
 	
 	@Override
 	public ArrayList<String> getFollows(WordGram key){
