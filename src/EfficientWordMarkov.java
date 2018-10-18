@@ -10,6 +10,9 @@ class EfficientWordMarkov extends EfficientMarkov {
 	public EfficientWordMarkov(int order) {
 		super(order);
 	}
+	public EfficientWordMarkov() {
+		this(3);
+	}
 	@Override
 	public void setTraining(String text) {
 		myWords= text.split("\\s+");
