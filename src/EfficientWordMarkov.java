@@ -7,6 +7,9 @@ class EfficientWordMarkov extends EfficientMarkov {
 // string myText from BaseMarkov becomes String[] myWords
 	String[] myWords;
 	HashMap<WordGram, ArrayList<String>> myMap;
+	public EfficientWordMarkov(int order) {
+		super(order);
+	}
 	@Override
 	public void setTraining(String text) {
 		myWords= text.split("\\s+");
