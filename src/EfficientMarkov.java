@@ -6,7 +6,7 @@ import java.util.NoSuchElementException;
  * inherits the protected instance variables and methods of base markov
  */
 public class EfficientMarkov extends BaseMarkov {
-	HashMap<String, ArrayList<String>> myMap;
+	private HashMap<String, ArrayList<String>> myMap;
 	//constructor 1
 	public EfficientMarkov (int order) {
 		super(order);
