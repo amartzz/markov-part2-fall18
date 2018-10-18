@@ -28,7 +28,7 @@ class EfficientWordMarkov extends EfficientMarkov {
 				myMap.put(curGram,  nList);
 			}
 			//adds string to array list, placed in corresponding key values
-			if (index+myOrder < myWords.length) {
+			if ((index+myOrder) < myWords.length) {
 				myMap.get(curGram).add(myWords[index+myOrder]);	
 			}
 			//makes last key value equal pseudo thing
@@ -44,10 +44,13 @@ class EfficientWordMarkov extends EfficientMarkov {
 	
 	@Override
 	public ArrayList<String> getFollows(String key){
-		if (!myMap.keySet().contains(key)) {
-			throw new NoSuchElementException(key+ " not in map");			
+		String[] key1= new String[1];
+		key1[0]= key;
+		WordGram con= new WordGram(key1,0, myOrder);
+		if (!myMap.keySet().contains(con)) {
+			throw new NoSuchElementException(con + " not in map");			
 		}
-		return myMap.get(key);
+		return myMap.get(con);
 
 }
 }
