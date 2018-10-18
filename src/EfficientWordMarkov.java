@@ -11,7 +11,7 @@ public class EfficientWordMarkov extends BaseWordMarkov {
 		super(order);
 	}
 	public EfficientWordMarkov() {
-		this(2);
+		this(3);
 	}
 	@Override
 	public void setTraining(String text) {
