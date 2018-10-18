@@ -21,7 +21,7 @@ public class EfficientWordMarkov extends BaseWordMarkov {
 		myMap.clear();
 		
 		for (int index=0; index < (myWords.length -myOrder+1); index++) {
-			WordGram curGram= new WordGram(myWords, index, myWords.length);
+			WordGram curGram= new WordGram(myWords, index, myWords.length - myOrder +1);
 			//checks if map contains key, if not adds key and empty array list
 			if (!myMap.containsKey(curGram)) {
 				ArrayList<String> nList = new ArrayList<String>();
