@@ -29,7 +29,7 @@ public class EfficientWordMarkov extends BaseWordMarkov {
 			}
 			//adds string to array list, placed in corresponding key values
 			if ((index+myOrder) < myWords.length) {
-				myMap.get(curGram).add(myWords[index+myOrder+1]);	
+				myMap.get(curGram).add(myWords[index]);	
 			}
 			//makes last key value equal pseudo thing
 			if(index+myOrder >= myWords.length) {
