@@ -128,6 +128,8 @@ time	source	#chars
 Finished tests
 
 
-Clearly the shorter the wordgram, the longer the program takes to run.
+Hypothetically, I thought the shorter the wordgram, the longer the program takes to run.
 This makes sense because if the wordgram is shorter it needs to create more wordgrams
 total and needs to scan the remaining words more times than if it's a longer wordgram.
+However, the runtimes don't show much of a difference for runtime between a 3 order, 5 order, and 10 order 
+wordgram.
