@@ -5,7 +5,7 @@ import java.util.NoSuchElementException;
 public class EfficientWordMarkov extends BaseWordMarkov {
 //implement and override setTraining and getFollows with WordGram objects
 // string myText from BaseMarkov becomes String[] myWords
-    //String[] myWords;
+    
 	private HashMap<WordGram, ArrayList<String>> myMap;
 	public EfficientWordMarkov(int order) {
 		super(order);
@@ -21,7 +21,7 @@ public class EfficientWordMarkov extends BaseWordMarkov {
 		myMap = new HashMap<WordGram, ArrayList<String>>() ;
 		myMap.clear();
 		
-		for (int index=0; index < (myWords.length- myOrder); index++) {
+		for (int index=0; index < (myWords.length- myOrder+1); index++) {
 			WordGram curGram= new WordGram(myWords, index, myOrder);
 			//checks if map contains key, if not adds key and empty array list
 			if (!myMap.containsKey(curGram)) {
@@ -30,7 +30,7 @@ public class EfficientWordMarkov extends BaseWordMarkov {
 			}
 			//adds string to array list, placed in corresponding key values
 			if ((index+myOrder) < myWords.length) {
-				myMap.get(curGram).add(myWords[index]);	
+				myMap.get(curGram).add(myWords[index+myOrder]);	
 			}
 			//makes last key value equal pseudo thing
 			if(index+myOrder >= myWords.length) {
