@@ -1,9 +1,11 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.NoSuchElementException;
-/*
+/**
  * new class that extends BaseMarkov but runs more efficiently
  * inherits the protected instance variables and methods of base markov
+ * @param order size of markov generator
+ *  
  */
 public class EfficientMarkov extends BaseMarkov {
 	//initialize private HashMap with string as key and ArrayList of strings as values
@@ -12,14 +14,16 @@ public class EfficientMarkov extends BaseMarkov {
 	public EfficientMarkov (int order) {
 		super(order);
 	}
-	//constructor 2	
+	//constructor 2, has order 3
 	public EfficientMarkov() {
 		this(3);
 	}
 
 	// need to override two methods: setTraining - builds and fills map
 	//and getFollows which throws error if it can't find key in map
-
+/**
+ * @see BaseMarkov#setTraining(String)
+ */
 	@Override
 	public void setTraining(String text) {
 		myText = text;
@@ -58,7 +62,9 @@ public class EfficientMarkov extends BaseMarkov {
 		}
 	}
 
-
+	/**
+	 * @see BaseMarkov#getFollows(String)
+	 */
 	@Override
 	public ArrayList<String> getFollows(String key){
 		//if key null throw error

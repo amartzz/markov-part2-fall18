@@ -18,6 +18,9 @@ public class EfficientWordMarkov extends BaseWordMarkov {
 	public EfficientWordMarkov() {
 		this(3);
 	}
+	/**
+	 * @see BaseWordMarkov#setTraining(String)
+	 */
 	@Override
 	
 	public void setTraining(String text) {
@@ -44,6 +47,11 @@ public class EfficientWordMarkov extends BaseWordMarkov {
 
 		}
 	}
+	/**
+	 * overrides the method getFollows in BaseWordMarkov(non-Javadoc)
+	 * @see BaseWordMarkov#getFollows(WordGram)
+	 * 
+	 */
 	@Override
 	public ArrayList<String> getFollows(WordGram key){
 		
