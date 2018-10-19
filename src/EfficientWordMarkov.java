@@ -14,6 +14,7 @@ public class EfficientWordMarkov extends BaseWordMarkov {
 		this(3);
 	}
 	@Override
+	//git comment
 	public void setTraining(String text) {
 		myWords= text.split("\\s+");
 		//creates new blank map
